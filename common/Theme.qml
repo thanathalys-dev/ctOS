@@ -57,7 +57,7 @@ Singleton {
     // (the greeter itself only ever needed cyan/red -- see success/
     // error below, untouched).
     readonly property color accentGreen: "#30F291"      // cybrdots gr0 (was Watch Dogs' #1bfd9c, unused, now correct)
-    readonly property color accentCyan: "#29BECC"       // cybrdots cy0 — password-correct feedback
+    readonly property color accentCyan: "#5EF6FF"       // CP2077 UI manual main-palette CYAN (was cybrdots cy0 #29BECC, too dull) — highlight/selection, password-correct feedback
     readonly property color accentRed: "#F24848"        // was #fc3e38 — now cybrdots re0, password-error feedback
     readonly property color accentOrange: "#F26118"     // cybrdots or0
     readonly property color accentYellow: "#F2D230"     // cybrdots ye0
@@ -102,6 +102,14 @@ Singleton {
     readonly property color warn: accentOrange
     readonly property color critical: accentRed
 
+    // CP2077 UI manual roles for the desktop panels:
+    //  - field labels are the default RED, dimmed, so values (white/cyan) read first
+    //  - GOLD marks the "main quest" (the thing you're actively on) and currency-like counts
+    readonly property color label: Qt.rgba(accentRed.r, accentRed.g, accentRed.b, 0.62)
+    readonly property color gold: "#F0B537"             // manual secondary palette YELLOW (GOLD)
+
     // SECTION Fonts
     property string fontFamily: "JetBrainsMono Nerd Font"
+    // Manual: Orbitron is the complementary face, for decoration and display titles only
+    readonly property string fontDisplay: "Orbitron"
 }
